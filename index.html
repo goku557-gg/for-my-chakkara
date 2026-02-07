@@ -31,7 +31,7 @@ section{
 }
 
 button{
-  padding:12px 28px;
+  padding:12px 30px;
   border:none;
   border-radius:30px;
   background:#ff4d6d;
@@ -40,22 +40,37 @@ button{
   cursor:pointer;
 }
 
-.photos img{
-  width:260px;
-  border-radius:25px;
-  box-shadow:0 15px 30px rgba(0,0,0,0.25);
-  animation:float 4s ease-in-out infinite;
+.week{
+  max-width:800px;
+  margin:auto;
 }
 
-@keyframes float{
-  50%{transform:translateY(-12px)}
+.day{
+  background:white;
+  margin:14px 0;
+  padding:18px;
+  border-radius:22px;
+  opacity:0;
+  animation:reveal 1s forwards;
+}
+
+.day:nth-child(1){animation-delay:0s}
+.day:nth-child(2){animation-delay:1s}
+.day:nth-child(3){animation-delay:2s}
+.day:nth-child(4){animation-delay:3s}
+.day:nth-child(5){animation-delay:4s}
+.day:nth-child(6){animation-delay:5s}
+.day:nth-child(7){animation-delay:6s}
+
+@keyframes reveal{
+  to{opacity:1}
 }
 
 .card{
   background:white;
-  border-radius:25px;
+  border-radius:28px;
   padding:30px;
-  max-width:900px;
+  max-width:950px;
   margin:auto;
   box-shadow:0 18px 35px rgba(0,0,0,0.25);
 }
@@ -70,15 +85,15 @@ button{
   display:none;
 }
 
-.burst span{
+.burst{
   position:fixed;
-  font-size:30px;
-  animation:burst 2s ease-out forwards;
+  font-size:32px;
+  animation:burst 2.2s ease-out forwards;
 }
 
 @keyframes burst{
   to{
-    transform:translateY(-200px) scale(1.5);
+    transform:translateY(-250px) scale(1.6);
     opacity:0;
   }
 }
@@ -93,11 +108,11 @@ button{
 /* emoji rain everywhere */
 const emojis=["💋","😘","💗","🥹","🫠","💐","❤️","😚"];
 setInterval(()=>{
-  let e=document.createElement("div");
+  const e=document.createElement("div");
   e.className="emoji";
   e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
   e.style.left=Math.random()*100+"vw";
-  e.style.fontSize=(18+Math.random()*22)+"px";
+  e.style.fontSize=(18+Math.random()*24)+"px";
   document.body.appendChild(e);
   setTimeout(()=>e.remove(),7000);
 },200);
@@ -108,11 +123,15 @@ setInterval(()=>{
   <button onclick="document.getElementById('music').play()">Click to play 🎶</button>
 </section>
 
-<section>
-  <h1 style="font-size:3rem;">💋</h1>
-  <div class="photos">
-    <img src="her.jpg" alt="My Valentine 💗">
-  </div>
+<!-- VALENTINE WEEK (BACK ❤️) -->
+<section class="week">
+  <div class="day">🌹 Rose Day – Every rose reminds me of you</div>
+  <div class="day">🍫 Chocolate Day – Sweet like your smile</div>
+  <div class="day">🧸 Teddy Day – I wish I could hug you forever</div>
+  <div class="day">💌 Promise Day – I promise my life to you</div>
+  <div class="day">🤗 Hug Day – Missing your warmth</div>
+  <div class="day">💋 Kiss Day – Every kiss lives in my heart enjiyum kuduthal tharaney🙈</div>
+  <div class="day">❤️ Valentine’s Day – You are my forever chakkarey</div>
 </section>
 
 <section>
@@ -128,44 +147,4 @@ setInterval(()=>{
 
 <section id="proposal">
   <h1>Will you be my Valentine? 💍💗</h1>
-  <button onclick="sayYes()">YES 💐</button>
-</section>
-
-<section id="yesScreen">
-  <h1>She said YES 😭💗</h1>
-</section>
-
-<script>
-const text=`Happy Valentine's day achuuu 🥹😘, so enich ente first valentine's day ahh enich entha parayandey ennu onnum arinjuda eppo manasli varunney ellam athupoley parayam 😌💗. As I have mentioned a hundred times before, nee enik sherikkum oru blessing ahh 🥹. My only dream and wish was you, and now I have that with me. Life long motham koode vennonum ind, and koode kannum ariyam just otta kariyam, when you're with me, I am always happy. Ethin munne orikkallum ellathe oru happiness enik eppo ind. From the moment I wake up until I go to sleep, I can feel your presence with me 🫠. Eppo exam time ahnallo achuun enik nallonam miss adikkuind 🫠🫠. Nee ellathe oru secondum pattunillan realize cheythu. Hours varathe erikkum, I am losing my strength 🫠🫠. Miss adichattu vayyathe avum but achuu varupoo ok avutto ☺️😚. Enich veluthayi onnum arinjuda but the person I admired for two years was the best choice of my life 😩. I am being treated the way I always wanted 🥺. Pinne 2 years admire cheythekkallum a thousand times more, admire cheyan eppo pattuind 🫠. And 😭 you're more beautiful every day; I am falling for you again and again, even harder 😭😭💗. I love you more than my life 🥺💗 and I only want a life with you 🫠🫠.
-So will you be my Valentine, achuu? 💗💐`;
-
-let i=0;
-(function type(){
-  if(i<text.length){
-    document.getElementById("typed").innerHTML+=text.charAt(i++);
-    setTimeout(type,25);
-  }
-})();
-
-function showProposal(){
-  document.getElementById("proposal").style.display="block";
-}
-
-function sayYes(){
-  document.getElementById("proposal").style.display="none";
-  document.getElementById("yesScreen").style.display="block";
-
-  for(let i=0;i<30;i++){
-    let s=document.createElement("span");
-    s.innerText="💗";
-    s.style.left=Math.random()*100+"vw";
-    s.style.top=Math.random()*100+"vh";
-    s.className="burst";
-    document.body.appendChild(s);
-    setTimeout(()=>s.remove(),2000);
-  }
-}
-</script>
-
-</body>
-</html>
+  <button onclick="sayYes()">YES 😭💐</
