@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Achuuu 💗</title>
+<title>For You 💗</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -13,17 +13,17 @@ body {
   overflow-x: hidden;
 }
 
-/* floating hearts */
-.heart {
+/* Emoji rain */
+.emoji {
   position: fixed;
-  color: rgba(255,0,100,0.4);
-  font-size: 20px;
-  animation: float 6s linear infinite;
+  font-size: 22px;
+  animation: rain 7s linear infinite;
+  pointer-events: none;
 }
 
-@keyframes float {
-  from { transform: translateY(100vh); opacity: 1; }
-  to { transform: translateY(-10vh); opacity: 0; }
+@keyframes rain {
+  from { transform: translateY(-10vh); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
 }
 
 section {
@@ -68,34 +68,35 @@ button {
 .day:nth-child(7){animation-delay:6s}
 
 @keyframes reveal {
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; }
 }
 
 .photos {
   display: flex;
-  gap: 15px;
+  gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .photos img {
-  width: 220px;
-  border-radius: 20px;
+  width: 240px;
+  border-radius: 24px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
   animation: floatImg 4s ease-in-out infinite;
 }
 
 @keyframes floatImg {
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
+  50%{transform:translateY(-14px)}
 }
 
 .card {
   background: white;
-  border-radius: 25px;
+  border-radius: 28px;
   padding: 30px;
-  max-width: 900px;
+  max-width: 950px;
   margin: auto;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25);
 }
 
 #typed {
@@ -122,16 +123,17 @@ button {
 <audio id="music" src="everything_is_romantic.mp3" loop></audio>
 
 <script>
-/* hearts */
+/* emoji rain */
+const emojis = ["💋","😘","🥹","💗","🫠","💐","❤️","😚"];
 setInterval(()=>{
-  let h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="💗";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(15+Math.random()*20)+"px";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),6000);
-},400);
+  const e=document.createElement("div");
+  e.className="emoji";
+  e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left=Math.random()*100+"vw";
+  e.style.fontSize=(18+Math.random()*20)+"px";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),7000);
+},250);
 </script>
 
 <section>
@@ -150,7 +152,7 @@ setInterval(()=>{
 </section>
 
 <section>
-  <h2>Us 🫠💗</h2>
+  <h1 style="font-size:3.2rem;">💋</h1>
   <div class="photos">
     <img src="photos/1.jpg">
     <img src="photos/2.jpg">
@@ -160,7 +162,7 @@ setInterval(()=>{
 
 <section>
   <div class="card">
-    <h2>My Letter 💌</h2>
+    <h2>For You 💗</h2>
     <p id="typed"></p>
   </div>
 </section>
