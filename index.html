@@ -102,6 +102,8 @@ button{
 
 <body>
 
+<audio id="music" src="everything_is_romantic.mp3" loop></audio>
+
 <script>
 /* emoji rain everywhere */
 const emojis=["💋","😘","💗","🥹","🫠","💐","❤️","😚"];
@@ -118,8 +120,8 @@ setInterval(()=>{
 
 <section>
   <h1>Happy Valentine’s Day Achuuu 🥹💗</h1>
- <audio id="song" src="pranayanila.mp3"></audio>
-<button onclick="playSong()">Click to play 🎶</button>
+  <button onclick="document.getElementById('music').play()">Click to play 🎶</button>
+</section>
 
 <!-- VALENTINE WEEK (BACK ❤️) -->
 <section class="week">
@@ -190,4 +192,3 @@ function sayYes(){
 
 </body>
 </html>
-
