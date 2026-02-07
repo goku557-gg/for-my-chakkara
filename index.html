@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Achuuu 💗</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow-x: hidden;
+}
+
+/* floating hearts */
+.heart {
+  position: fixed;
+  color: rgba(255,0,100,0.4);
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); opacity: 1; }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #d6336c;
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.week {
+  max-width: 800px;
+  margin: auto;
+}
+
+.day {
+  background: white;
+  margin: 15px 0;
+  padding: 18px;
+  border-radius: 20px;
+  opacity: 0;
+  animation: reveal 1s forwards;
+}
+
+.day:nth-child(1){animation-delay:0s}
+.day:nth-child(2){animation-delay:1s}
+.day:nth-child(3){animation-delay:2s}
+.day:nth-child(4){animation-delay:3s}
+.day:nth-child(5){animation-delay:4s}
+.day:nth-child(6){animation-delay:5s}
+.day:nth-child(7){animation-delay:6s}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.photos {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.photos img {
+  width: 220px;
+  border-radius: 20px;
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+@keyframes floatImg {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+.card {
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+#typed {
+  white-space: pre-wrap;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+#proposal {
+  display: none;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" src="everything_is_romantic.mp3" loop></audio>
+
+<script>
+/* hearts */
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💗";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(15+Math.random()*20)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},400);
+</script>
+
+<section>
+  <h1>Happy Valentine’s Day Achuuu 🥹💗</h1>
+  <button onclick="document.getElementById('music').play()">▶ Play our song 🎶</button>
+</section>
+
+<section class="week">
+  <div class="day">🌹 Rose Day – Every rose reminds me of you</div>
+  <div class="day">🍫 Chocolate Day – Sweet like your smile</div>
+  <div class="day">🧸 Teddy Day – I wish I could hug you forever</div>
+  <div class="day">💌 Promise Day – I promise my heart to you</div>
+  <div class="day">🤗 Hug Day – Missing your warmth</div>
+  <div class="day">💋 Kiss Day – Every kiss lives in my heart</div>
+  <div class="day">❤️ Valentine’s Day – You are my forever</div>
+</section>
+
+<section>
+  <h2>Us 🫠💗</h2>
+  <div class="photos">
+    <img src="photos/1.jpg">
+    <img src="photos/2.jpg">
+    <img src="photos/3.jpg">
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>My Letter 💌</h2>
+    <p id="typed"></p>
+  </div>
+</section>
+
+<section>
+  <button onclick="showProposal()">Click my heart 💗</button>
+</section>
+
+<section id="proposal">
+  <h1>Will you be my Valentine, Achuuu? 💍💗</h1>
+  <h2>YES 😭💐</h2>
+</section>
+
+<script>
+const text = `Happy Valentine's day achuuu 🥹😘, so enich ente first valentine's day ahh enich entha parayandey ennu onnum arinjuda eppo manasli varunney ellam athupoley parayam 😌💗. As I have mentioned a hundred times before, nee enik sherikkum oru blessing ahh 🥹. My only dream and wish was you, and now I have that with me. Life long motham koode vennonum ind, and koode kannum ariyam just otta kariyam, when you're with me, I am always happy. Ethin munne orikkallum ellathe oru happiness enik eppo ind. From the moment I wake up until I go to sleep, I can feel your presence with me 🫠. Eppo exam time ahnallo achuun enik nallonam miss adikkuind 🫠🫠. Nee ellathe oru secondum pattunillan realize cheythu. Hours varathe erikkum, I am losing my strength 🫠🫠. Miss adichattu vayyathe avum but achuu varupoo ok avutto ☺️😚. Enich veluthayi onnum arinjuda but the person I admired for two years was the best choice of my life 😩. I am being treated the way I always wanted 🥺. Pinne 2 years admire cheythekkallum a thousand times more, admire cheyan eppo pattuind 🫠. And 😭 you're more beautiful every day; I am falling for you again and again, even harder 😭😭💗. I love you more than my life 🥺💗 and I only want a life with you 🫠🫠.
+So will you be my Valentine, achuu? 💗💐`;
+
+let i=0;
+function typeText(){
+  if(i<text.length){
+    document.getElementById("typed").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeText,25);
+  }
+}
+typeText();
+
+function showProposal(){
+  document.getElementById("proposal").style.display="block";
+}
+</script>
+
+</body>
+</html>
